@@ -6,15 +6,20 @@ const collegeContent = document.getElementById('collegeContent');
 // Sample course data for each college and branch
 const courseData = {
     college1: {
-        mba: ["MBA Course 1", "MBA Course 2", "MBA Course 3"],
-        bba: ["BBA Course 1", "BBA Course 2"],
-        btech: ["B.Tech Course 1", "B.Tech Course 2", "B.Tech Course 3"],
-        mtech: ["M.Tech Course 1"]
+        mba: ["MBA Course 1"],
+        bba: ["BBA Course 1"],
+        btech: ["B.Tech CSE", "B.Tech IT", "B.Tech ECE"],
+        mtech: ["M.Tech CSE"]
     },
     college2: {
-        mba: ["MBA Course 1", "MBA Course 2", "MBA Course 3", "MBA Course 4"],
-        btech: ["B.Tech Course 1", "B.Tech Course 2"],
-        mtech: ["M.Tech Course 1", "M.Tech Course 2", "M.Tech Course 3"]
+        mba: ["MBA Course 1"],
+        btech: ["B.Tech CSE", "B.Tech IT"],
+        mtech: ["M.Tech CSE", "M.Tech IT", "M.Tech ECE"]
+    },
+    college3: {
+        mba: ["MBA Course 1"],
+        bCom: [ "B.Com "],
+        mCom: ["M.Com"]
     }
     // Add more colleges and their courses as needed
 };

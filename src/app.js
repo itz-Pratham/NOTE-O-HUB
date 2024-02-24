@@ -29,6 +29,9 @@ app.get("/login",(req,res)=>{
 app.get("/myteam",(req,res)=>{
     res.render("myteam.pug")
 });
+app.get("/delhi",(req,res)=>{
+    res.render("delhi.pug")
+});
 app.post("/signup",async(req,res)=>{
     try {
         const password=req.body.Password

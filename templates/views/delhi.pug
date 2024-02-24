@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title College Courses
+    style   
+        include ../../public/css/styles.css
+  body
+    .container
+      h1 College Courses
+      #collegeDropdownContainer.dropdown
+        select#collegeDropdown
+          option(value='', selected='', disabled='') Select College
+          option(value='college1') BPIT
+          option(value='college2') DTU
+          option(value='college2') SRCC
+          // Add more colleges as needed
+      #collegeContent.content(style='display: none;')
+        #branchButtons.branches(style='display: none;')
+          // Branch buttons will be added here
+        #courseCards.course-cards(style='display: none;')
+          // Courses will be dynamically added here
+    script(src='./js/script.js')
