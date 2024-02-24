@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subject Selection</title>
+<link rel="stylesheet"  href="semester.css">
+</head>
+<body>
+    
+
+ <div class="container">
+    <div class="image-container">
+        <img src="photo.webp" alt="Image" class="image"
+          height= '70' width="50">
+    </div>
+    <div class="text-container">
+        <h1 style="font-size:80px;">STEP TOWARDS SUCCESS</h1>
+        <div class="dropdowns">
+            <!--<select id="branch-select">
+                <option value="cse">CSE</option>
+                <option value="ece">ECE</option>
+                <option value="it">IT</option>
+            </select>-->
+            <select id="semester-select">
+                <option value="sem1">Semester 1</option>
+                <option value="sem2">Semester 2</option>
+                <option value="sem3">Semester 3</option>
+                <option value="sem4">Semester 4</option>
+                <option value="sem5">Semester 5</option>
+                <option value="sem6">Semester 6</option>
+                <option value="sem7">Semester 7</option>
+                <option value="sem8">Semester 8</option>
+            </select>
+        </div>
+        <div id="subject-container" class="subject-container">
+        </div>
+    </div>
+</div>
+
+<script>
+    const semesterSelect = document.getElementById('semester-select');
+    const subjectContainer = document.getElementById('subject-container');
+
+    const subjects = {
+        sem1: ['APPLIED MATHS-1', 'APPLIED PHYSICS-1', 'ENVIRONMENT STUDIES ', 'PROGRAMMING IN C', 'MANUFACTURING PROCESS', 'HUMAN VALUE ETHICS'],
+        sem2: ['APPLIED MATHS-2 ', 'APPLIED PHYSICS -2', 'ELECTRICAL SCIENCE', 'INDIAN CONSTITUTION', ' BASIC MECHANICAL ENGINEERING', 'COMMUNICATION SKILLS'],
+        sem3: ['COMPUTATIONAL TECHNIQUES', 'MACHINES', 'DIGITAL CIRCUITS', 'COMPUTATIONAL METHODS', 'DISCRETE MATHS', 'IKS'],
+        sem4: ['DIGITAL ELECTRONICS ', 'VHDL BASED DESIGN', 'DSA ', 'TECHNICAL WRITING ', 'CIRCUIT AND SYSTEMS ', 'LINEAR PROBABILITY AND STATISTICS'],
+        sem5: ['ANALOG ELECTRONICS', 'ENGINEERING ELECTRONICS', 'APPLIED MATHS-4', 'DIGITAL COMMUNICATION', 'SOFTWARE ENGINEERING', 'INDUSTRIAL MANAGEMENT'],
+        sem6: ['MICROWAVE DEVICES', 'MICROELECTRONICS', 'PRINCIPLES OF MANAGEMENT', 'POWER ELECTRONICS', 'SATELLITE COMMUNICATION', 'MICROPROCESSORS'],
+        sem7: ['INFORMATION SECURITY', 'WIRELESS COMMUNICATION', 'RADIO ENGINEERING ', 'CANTROL SYSTEM', 'DATA MINING', 'COMPLEXITY THEORY'],
+        sem8: ['MOBILE COMPUTING', 'TELLECOMMUNICATION', 'HVE-2', 'VLSI DESIGN', 'INFORMATION THEORY AND CODING ', 'SOFT COMPUTING'],
+    };
+
+    function populateSubjects() {
+        const selectedSemester = semesterSelect.value;
+        subjectContainer.innerHTML = '';
+        subjects[selectedSemester].forEach(subject => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.textContent = subject;
+            subjectContainer.appendChild(card);
+        });
+    }
+
+    populateSubjects();
+
+    semesterSelect.addEventListener('change', populateSubjects);
+
+</script>
+
+
+</body>
+</html>
