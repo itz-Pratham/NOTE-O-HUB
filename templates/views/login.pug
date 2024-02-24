@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Login
+  body
+    .container
+      h2 Login
+      form#loginForm
+        .form-group
+          label(for='Email') Email:
+          input#email(type='email', name='Email', required='true')
+        .form-group
+          label(for='Password') Password:
+          input#password(type='password', name='Password', required='true')
+        .form-group
+          button(type='submit') Login

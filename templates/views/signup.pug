@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Registration Form
+    style 
+        include ../../public/css/signup.css
+  body
+    .container
+      h2 Registration Form
+      form#registrationForm(action="/",method="POST")
+        .form-group
+          label(for='DisplayName') Display name:
+          input#DisplayName(type='text', name='DisplayName', required='')
+        .form-group
+          label(for='Username') Username:
+          input#username(type='text', name='Username', required='')
+        .form-group
+          label(for='Email') Email:
+          input#email(type='email', name='Email', required='')
+        .form-group
+          label(for='Status') Status:
+          select#status(name='Status', required='')
+            option(value='') Select Status
+            option(value='Student') Student
+            option(value='Alumni') Alumni
+            option(value='Faculty') Faculty
+        .form-group
+          label(for='College') College:
+          input#college(type='text', name='College', required='')
+        .form-group
+          label(for='Branch') Branch:
+          input#branch(type='text', name='Branch', required='')
+        .form-group
+          label(for='PassingYear') Passing Year:
+          input#passingyear(type='number', name='PassingYear', required='')
+        .form-group
+          label(for='Password') Password:
+          input#password(type='password', name='Password', required='')
+        .form-group
+          label(for='ConfirmPassword') Confirm Password:
+          input#confirmpassword(type='password', name='ConfirmPassword', required='')
+        .form-group
+          button(type='submit') Register
