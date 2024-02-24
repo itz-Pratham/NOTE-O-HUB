@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note-O-Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="nav">
+        <span id = "logo">𝐍.</span>
+        <h3 style="font-size: 30px; font-weight: bold; font-family: league system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; padding-left: 1.2vw; padding-right: 3.6vw; color: red;">
+            Note<span style="color: white; font-size: 30px;">-O-Hub</span>
+        </h4>
+        <h4>Home</h4>
+        <h4 style="text-decoration: none; color: black;"><a href="Our_Team.html">Our Team</a></h4>
+        <h4>Contact Us</h4>
+        <h4>Courses</h4>
+        <button type="button">Login/Register</button>
+    </div>
+    <video autoplay loop="true" muted src="143681 (Original).mp4"></video>
+    <div id="main">
+        <div id="page1">
+          <h1>RISE. UPSKILL. SHINE.</h1>
+          <h2 id="page-1para" >WELCOME TO NOTE-O-HUB</h2>
+          <p id="page-1para">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+          <div class="main1">
+            <select id="states" onchange="populateCities(this.value)" >
+                <option value="" disabled selected>Select A State</option>
+                <!-- Add options for states here -->
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Puducherry">Puducherry</option>
+            </select>
+    
+            <select id="cities">
+                <option value="">Select A City</option>
+                <!-- Cities will be populated dynamically based on the selected state -->
+            </select>
+          </div>
+          <div class="nextbutton">
+            <button type="button">NEXT →</button> 
+        </div>
+        </div>
+    </div>
+        
+
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("states");
+            dropdown.classList.toggle("open");
+            if (dropdown.classList.contains("open")) {
+                var numOptions = dropdown.options.length;
+                dropdown.style.maxHeight = (numOptions * 30) + "px"; // Adjust height per option
+            } else {
+                dropdown.style.maxHeight = "32px"; // Adjust as needed
+            }
+        }
+
+        document.addEventListener("click", function(event) {
+            if (!event.target.matches("#states")) {
+                var dropdown = document.getElementById("states");
+                dropdown.classList.remove("open");
+                dropdown.style.maxHeight = "32px"; // Adjust as needed
+            }
+        });
+
+
+        function populateCities(state) {
+            var cities = document.getElementById("cities");
+            cities.innerHTML = ""; // Clear previous options
+
+            if (state === "Delhi") {
+            addCity("New Delhi");
+            addCity("Gurgaon");
+            addCity("Noida");
+            addCity("Faridabad");
+            addCity("Ghaziabad");
+            addCity("Greater Noida");
+            addCity("Sonepat");
+            addCity("Panipat");
+            addCity("Rohtak");
+            addCity("Bahadurgarh");
+        } else if (state === "Uttar Pradesh") {
+            addCity("Lucknow");
+            addCity("Kanpur");
+            addCity("Agra");
+            addCity("Varanasi");
+            addCity("Allahabad");
+            addCity("Meerut");
+            addCity("Bareilly");
+            addCity("Aligarh");
+            addCity("Moradabad");
+            addCity("Saharanpur");
+        } else if (state === "Maharashtra") {
+            addCity("Mumbai");
+            addCity("Pune");
+            addCity("Nagpur");
+            addCity("Nashik");
+            addCity("Thane");
+            addCity("Aurangabad");
+            addCity("Solapur");
+            addCity("Amravati");
+            addCity("Kolhapur");
+            addCity("Sangli");
+        } else if (state === "Madhya Pradesh") {
+            addCity("Indore");
+            addCity("Bhopal");
+            addCity("Jabalpur");
+            addCity("Gwalior");
+            addCity("Ujjain");
+            addCity("Sagar");
+            addCity("Ratlam");
+            addCity("Rewa");
+            addCity("Satna");
+            addCity("Dewas");
+        } else {
+            addCity("No college covered yet");
+        }
+        // Add more states and cities as needed
+
+        }
+
+        function addCity(cityName) {
+            var option = document.createElement("option");
+            option.text = cityName;
+            document.getElementById("cities").add(option);
+        }
+    </script>
+</body>
+
+</html>
