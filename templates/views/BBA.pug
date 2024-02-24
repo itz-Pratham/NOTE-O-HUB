@@ -4,11 +4,13 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Subject Selection
-    link(rel='stylesheet', href='semester.css')
+    style   
+      include ../../public/css/BBA.css
   body
+    //- include ../partials/navbar.pug
     .container
       .image-container
-        img.image(src='photo.webp', alt='Image', height='70', width='50')
+        img.image(src='./images/3rd.jpg', alt='Image', height='70', width='50')
       .text-container
         h1(style='font-size:80px;') STEP TOWARDS SUCCESS
         .dropdowns

@@ -32,6 +32,26 @@ app.get("/myteam",(req,res)=>{
 app.get("/delhi",(req,res)=>{
     res.render("delhi.pug")
 });
+app.get("/cse",(req,res)=>{
+    res.render("CSE.pug")
+});
+app.get("/ap1",(req,res)=>{
+    res.render("AP1.pug")
+});
+app.get("/bba",(req,res)=>{
+    res.render("BBA.pug")
+});
+app.get("/ece",(req,res)=>{
+    res.render("ECE.pug")
+});
+app.get("/it",(req,res)=>{
+    res.render("IT.pug")
+});
+app.get("/mba",(req,res)=>{
+    res.render("mba.pug")
+});
+
+
 app.post("/signup",async(req,res)=>{
     try {
         const password=req.body.Password
