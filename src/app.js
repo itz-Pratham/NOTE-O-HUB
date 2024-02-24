@@ -63,7 +63,7 @@ app.post("/login", async(req, res) => {
         const Password = req.body.Password;
         const userEmail = await Register.findOne({ Email: Email })
         if (userEmail.Password === Password) {
-            res.render('signup.pug');
+            res.render('home.pug');
         }
         else {
             res.send('invalid details')
