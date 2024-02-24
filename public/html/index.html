@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note-O-Hub</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <h4>Courses</h4>
         <button type="button">Login/Register</button>
     </div>
-    <video autoplay loop="true" muted src="143681 (Original).mp4"></video>
+    <video autoplay loop="true" muted src="../videos/143681 (Original).mp4"></video>
     <div id="main">
         <div id="page1">
           <h1>RISE. UPSKILL. SHINE.</h1>
@@ -74,8 +74,8 @@
                 <!-- Cities will be populated dynamically based on the selected state -->
             </select>
           </div>
-          <div class="nextbutton">
-            <button type="button">NEXT →</button> 
+          <div class="nextbutton"> 
+            <button type="button" onclick="navigateToNextPage()">NEXT →</button> 
         </div>
         </div>
     </div>
@@ -162,6 +162,16 @@
             var option = document.createElement("option");
             option.text = cityName;
             document.getElementById("cities").add(option);
+        }
+        function navigateToNextPage(){
+            var state=document.getElementById("states").value;
+            if(state="") {
+                alert("please select a city and state");
+            }
+            else{
+                window.location.href = "/" + state.toLowerCase().replace(" ", "_");
+            }
+            
         }
     </script>
 </body>

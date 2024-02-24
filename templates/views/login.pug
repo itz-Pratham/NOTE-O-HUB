@@ -4,15 +4,20 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Login
+    style 
+      include ../../public/css/login.css 
   body
-    .container
-      h2 Login
-      form#loginForm
-        .form-group
-          label(for='Email') Email:
-          input#email(type='email', name='Email', required='true')
-        .form-group
-          label(for='Password') Password:
-          input#password(type='password', name='Password', required='true')
-        .form-group
-          button(type='submit') Login
+    include ../partials/navbar.pug
+    .form
+      .container
+        h2 Login
+        form#loginForm(action='/login' method='POST')
+          .form-group
+            label(for='Email') Email:
+            input#email(type='email', name='Email', required='true')
+          .form-group
+            label(for='Password') Password:
+            input#password(type='password', name='Password', required='true')
+          .form-group
+            button(type='submit') Login
+            a(href='/Signup') Don't have an account

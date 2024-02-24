@@ -15,9 +15,21 @@ app.set("view-engine","pug");
 app.set("views",static_path);
 
 app.get("/",(req,res)=>{
+    res.render("home.pug")
+});
+app.get("/home",(req,res)=>{
+    res.render("home.pug")
+});
+app.get("/signup",(req,res)=>{
     res.render("signup.pug")
 });
-app.post("/",async(req,res)=>{
+app.get("/login",(req,res)=>{
+    res.render("login.pug")
+});
+app.get("/myteam",(req,res)=>{
+    res.render("myteam.pug")
+});
+app.post("/signup",async(req,res)=>{
     try {
         const password=req.body.Password
         const cpassword=req.body.ConfirmPassword
@@ -45,6 +57,21 @@ app.post("/",async(req,res)=>{
         res.status(400).send(error);
     }
 });
+app.post("/login", async(req, res) => {
+    try {
+        const Email = req.body.Email;
+        const Password = req.body.Password;
+        const userEmail = await Register.findOne({ Email: Email })
+        if (userEmail.Password === Password) {
+            res.render('signup.pug');
+        }
+        else {
+            res.send('invalid details')
+        }
+    } catch (error) {
+        res.status(400).send("invalid details")
+    }
+})
 app.listen(port,()=>{
     console.log(`server is running at port ${port}`)
 })

@@ -1,18 +1,21 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
+}
+.form{
+    padding-top: 100px;
 }
 .container {
     width: 40%;
-    margin: 50px auto;
+    margin: 13vh auto;
     background: #fff;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
-h2 {
+.container h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
