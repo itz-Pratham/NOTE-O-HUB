@@ -10,7 +10,7 @@ body {
 }
 
 .main{
-    margin-top: 15vh;
+    padding-top: 20vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -58,11 +58,12 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    margin-left: 37vw;
+    margin-left: 42.5vw;
     margin-top: 10vh;
     padding: 1.2vw;
-    padding-right: 0px;
+    padding-right: 10px;
     padding-left: 1.2vw;
+    gap: 10px;
     border-radius: 15px;
     box-shadow: 1px 1px black;
     color: rgb(255, 0, 0);
