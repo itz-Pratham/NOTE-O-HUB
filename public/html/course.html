@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Course</title>
+    <link rel="stylesheet" href="../css/course.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Lecture List</h1>
+            <ul id="video-list">
+                <li data-video="../videos/1.mkv">Introduction to Applied Physics</li>
+                <li data-video="../videos/2.mkv">UNIT 1</li>
+                <li data-video="../videos/3.mkv">UNIT 2</li>
+                <li data-video="../videos/4.mkv">UNIT 3</li>
+                <li data-video="../videos/5.mkv">UNIT 4</li>
+                <li data-video="../videos/6.mkv">Conclusion</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="video-player">
+                <video id="video-player" controls>
+                    Your browser does not support the video tag.
+                </video>
+                <!-- <div class="controls">
+                    <button id="play-pause-btn">&#9658;</button>
+                    <input id="seek-bar" type="range" min="0" value="0">
+                    <button id="mute-btn">&#128266;</button>
+                    <input id="volume-bar" type="range" min="0" max="1" step="0.1" value="1">
+                    <button id="fullscreen-btn">&#128470;</button>
+                </div> -->
+            </div>
+            <div class="video-description">
+                <div class="heading" style="max-width: 20vw;"><h1 style="border-bottom: 3px solid black; padding-bottom: 1px;">Course Description</h1></div>
+                <p id="video-description-text">This is a course designed by a P.H.D. professional from DTU who has more than 10 years of teaching experience in this field. This crash course covers all the syllabus in just 10 hours along with some practical demonstration on the topic. After completing this course, you will have an effecient knowledge on the topic. For more such courses, visit the website : <a href="../A1.html"><span>www.Note-O-Hub.com</span></a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/course.js"></script>
+</body>
+</html>
