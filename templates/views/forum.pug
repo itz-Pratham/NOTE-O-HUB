@@ -1,0 +1,82 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title WEBSOCKETS
+    style.
+      *{
+            margin: 1rem auto;
+            padding: auto;
+        }
+        body{
+        /* background-image: url('https://thumbs.dreamstime.com/b/many-people-hands-holding-colorful-word-forum-caucasian-straight-letters-characters-building-isolated-english-white-53513264.jpg'); */
+            background-color: #75d7ab ;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:cover;
+        }
+        #community_forum{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        #name{
+            width: 326px;
+            margin: 30px auto;
+        }
+        #log{
+            width: 500px;
+            height: 200px;
+            margin: 0 auto;
+            border: 5px solid black;
+            border-radius: 7px;
+            background-color: white;
+        }
+        #textCntls{
+            width: 326px;
+            margin: 30px auto;
+        }
+  body
+    #community_forum
+      h2
+        | --- COMMUNITY FORUM ---
+    #name
+      input#nameInput(type='text', placeholder='Enter your name')
+      button(onclick='setName()') Submit
+    #log  
+    br
+    br
+    #textCntls
+      input#text(type='text', placeholder='Your message', style='height: 30px;')
+      button#send_message(style='height: 35px;')  Send message 
+    script.
+      var name;
+      function setName() {
+      // Get the value from the input field
+            name = document.getElementById("nameInput").value;
+            var nameDiv = document.getElementById("name");
+            nameDiv.style.display = "none"; // Hide the name input and submit button
+            var sock = new WebSocket("ws://localhost:5001");
+            sock.onopen = function(){
+                sock.send(JSON.stringify({
+                    type: "name",
+                    data: name
+                }));
+            }
+            var log = document.getElementById('log');
+            sock.onmessage = function(event){
+                console.log(event);
+                var json = JSON.parse(event.data);
+                log.innerHTML += json.name + " : " + json.data + "<br>";
+            }
+            document.getElementById('send_message').onclick = function(){
+                var text = document.getElementById('text').value;
+                    sock.send(JSON.stringify({
+                    type: "message",
+                    data: text
+                }));
+            log.innerHTML += "You : " + text + "<br>";
+        };
+      }

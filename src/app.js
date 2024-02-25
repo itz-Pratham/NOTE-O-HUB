@@ -56,6 +56,14 @@ app.get("/course",(req,res)=>{
 app.get("/contact",(req,res)=>{
     res.render("contact.pug")
 });
+app.get("/community",(req,res)=>{
+    res.render("community.pug")
+});
+app.get("/forum",(req,res)=>{
+    res.render("forum.pug")
+});
+
+
 
 
 
