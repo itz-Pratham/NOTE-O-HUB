@@ -9,17 +9,16 @@ const courseData = {
         mba: ["MBA"],
         bba: ["BBA "],
         btech: ["CSE", "IT","ECE"],
-        mtech: ["CSE", "IT","ECE"],
     },
     dtu: {
         mba: ["MBA"],
+        bba: ["BBA"],
         btech: ["CSE", "IT","ECE"],
         mtech: ["CSE", "IT", "ECE"]
     },
     srcc: {
         mba: ["MBA"],
-        btech: ["CSE", "IT","ECE"],
-        mtech: ["CSE", "IT","ECE"],
+        bba: ["BBA "]
     }
     // Add more colleges and their courses as needed
 };

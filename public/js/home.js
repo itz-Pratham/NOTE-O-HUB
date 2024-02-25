@@ -82,7 +82,7 @@ function navigateToNextPage(){
     var state=document.getElementById("states").value;
     
    
-    window.location.href = "/" + state.toLowerCase().replace(" ", "_");
-    
+    // window.location.href = "/" + state.toLowerCase().replace(" ", "_");
+    window.location.href = "/delhi";
             
 }
