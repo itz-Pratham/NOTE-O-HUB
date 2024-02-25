@@ -8,18 +8,19 @@ html(lang='en')
       include ../../public/css/styles.css
   body
     include ../partials/navbar.pug
-    .container
-      h1 College Courses
-      #collegeDropdownContainer.dropdown
-        select#collegeDropdown
-          option(value='', selected='', disabled='') Select College
-          option(value='bpit') BPIT
-          option(value='dtu') DTU
-          option(value='srcc') SRCC
-          // Add more colleges as needed
-      #collegeContent.content(style='display: none;')
-        #branchesContainer.branches
-          // Branch buttons will be dynamically added here
-        #courseCards.course-cards(style='display: none;')
-          // Courses will be dynamically added here
+    .superContainer
+      .container
+        h1 College Courses
+        #collegeDropdownContainer.dropdown
+          select#collegeDropdown
+            option(value='', selected='', disabled='') Select College
+            option(value='bpit') BPIT
+            option(value='dtu') DTU
+            option(value='srcc') SRCC
+            // Add more colleges as needed
+        #collegeContent.content(style='display: none;')
+          #branchesContainer.branches
+            // Branch buttons will be dynamically added here
+          #courseCards.course-cards(style='display: none;')
+            // Courses will be dynamically added here
     script(src='./js/script.js')
