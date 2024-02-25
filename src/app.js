@@ -53,6 +53,9 @@ app.get("/mba",(req,res)=>{
 app.get("/course",(req,res)=>{
     res.render("course.pug")
 });
+app.get("/contact",(req,res)=>{
+    res.render("contact.pug")
+});
 
 
 
