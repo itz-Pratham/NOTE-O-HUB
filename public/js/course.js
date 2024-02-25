@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const videoSource = event.target.getAttribute("data-video");
             videoPlayer.src = videoSource;
             videoPlayer.play();
-            videoDescription.textContent = event.target.textContent;
+            //videoDescription.textContent = event.target.textContent;
         }
     });
 

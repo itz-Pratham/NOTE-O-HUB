@@ -104,3 +104,43 @@ app.post("/login", async(req, res) => {
 app.listen(port,()=>{
     console.log(`server is running at port ${port}`)
 })
+
+
+
+// websocket
+
+
+var server = require('ws').Server
+var s = new server({port:5001});
+
+s.on('connection', function(ws){
+    ws.on('message', function(message){
+
+        message = JSON.parse(message);
+
+        if(message.type === "name"){
+            ws.personName = message.data;
+            
+        }
+
+        //ws.send(personName + " entered the chat room");
+
+        console.log("Received : " + message);
+
+        s.clients.forEach(function e(client){
+            if(client != ws)
+                client.send(JSON.stringify({
+                    name: ws.personName,
+                    data: message.data
+                }));
+            
+                //client.send(""+message);
+        });
+
+        //ws.send("From server : " + message);
+    });
+
+    ws.on('close', function(){
+        console.log("Client disconnected");
+    });
+});
