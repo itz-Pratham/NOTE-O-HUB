@@ -1,62 +1,72 @@
 const collegeDropdown = document.getElementById('collegeDropdown');
-const branchButtonsContainer = document.getElementById('branchButtons');
+const branchesContainer = document.getElementById('branchesContainer');
 const courseCardsContainer = document.getElementById('courseCards');
 const collegeContent = document.getElementById('collegeContent');
 
 // Sample course data for each college and branch
 const courseData = {
-    college1: {
-        mba: ["MBA Course 1"],
-        bba: ["BBA Course 1"],
-        btech: ["B.Tech CSE", "B.Tech IT", "B.Tech ECE"],
-        mtech: ["M.Tech CSE"]
+    bpit: {
+        mba: ["MBA"],
+        bba: ["BBA "],
+        btech: ["CSE", "IT","ECE"],
+        mtech: ["CSE", "IT","ECE"],
     },
-    college2: {
-        mba: ["MBA Course 1"],
-        btech: ["B.Tech CSE", "B.Tech IT"],
-        mtech: ["M.Tech CSE", "M.Tech IT", "M.Tech ECE"]
+    dtu: {
+        mba: ["MBA"],
+        btech: ["CSE", "IT","ECE"],
+        mtech: ["CSE", "IT", "ECE"]
     },
-    college3: {
-        mba: ["MBA Course 1"],
-        bCom: [ "B.Com "],
-        mCom: ["M.Com"]
+    srcc: {
+        mba: ["MBA"],
+        btech: ["CSE", "IT","ECE"],
+        mtech: ["CSE", "IT","ECE"],
     }
     // Add more colleges and their courses as needed
 };
+let selectedBranchButton = null;
 
 // Populate branch buttons when college is selected
 collegeDropdown.addEventListener('change', (event) => {
     const selectedCollege = event.target.value;
     if (selectedCollege) {
-        branchButtonsContainer.innerHTML = '';
+        branchesContainer.innerHTML = '';
         Object.keys(courseData[selectedCollege]).forEach(branch => {
-            const button = document.createElement('button');
-            button.textContent = branch.toUpperCase();
-            button.classList.add('branch-button');
-            button.addEventListener('click', () => showCourses(selectedCollege, branch));
-            branchButtonsContainer.appendChild(button);
+            const branchButton = document.createElement('button');
+            branchButton.textContent = branch.toUpperCase();
+            branchButton.classList.add('course-button');
+            branchButton.addEventListener('click', () => {
+                
+                displayCourses(selectedCollege, branch);
+                toggleBranchHighlight(branchButton);
+            });
+           
+            branchesContainer.appendChild(branchButton);
         });
-        branchButtonsContainer.style.display = 'flex';
         collegeContent.style.display = 'block';
     } else {
-        branchButtonsContainer.style.display = 'none';
         collegeContent.style.display = 'none';
     }
 });
 
-// Show courses for the selected branch
-function showCourses(college, branch) {
+// Display courses when a branch button is clicked
+function displayCourses(college, branch) {
     const courses = courseData[college][branch];
-    if (courses) {
-        courseCardsContainer.innerHTML = '';
-        courses.forEach(course => {
-            const card = document.createElement('div');
-            card.classList.add('course-card');
-            card.textContent = course;
-            courseCardsContainer.appendChild(card);
+    courseCardsContainer.innerHTML = '';
+    courses.forEach(course => {
+        const courseButton = document.createElement('button');
+        courseButton.textContent = course;
+        courseButton.classList.add('course-button');
+        courseButton.addEventListener('click', () => {
+            window.location.href = `/${course.toLowerCase()}`;
         });
-        courseCardsContainer.style.display = 'flex';
-    } else {
-        courseCardsContainer.style.display = 'none';
+        courseCardsContainer.appendChild(courseButton);
+    });
+    courseCardsContainer.style.display = 'flex';
+}
+function toggleBranchHighlight(branchButton) {
+    if (selectedBranchButton) {
+        selectedBranchButton.classList.remove('highlighted');
     }
+    branchButton.classList.add('highlighted');
+    selectedBranchButton = branchButton;
 }

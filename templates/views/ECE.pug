@@ -34,24 +34,27 @@ html(lang='en')
       const semesterSelect = document.getElementById('semester-select');
       const subjectContainer = document.getElementById('subject-container');
       const subjects = {
-      sem1: ['APPLIED MATHS-1', 'APPLIED PHYSICS-1', 'ENVIRONMENT STUDIES ', 'PROGRAMMING IN C', 'MANUFACTURING PROCESS', 'HUMAN VALUE ETHICS'],
-      sem2: ['APPLIED MATHS-2 ', 'APPLIED PHYSICS -2', 'ELECTRICAL SCIENCE', 'INDIAN CONSTITUTION', ' BASIC MECHANICAL ENGINEERING', 'COMMUNICATION SKILLS'],
-      sem3: ['COMPUTATIONAL TECHNIQUES', 'MACHINES', 'DIGITAL CIRCUITS', 'COMPUTATIONAL METHODS', 'DISCRETE MATHS', 'IKS'],
-      sem4: ['DIGITAL ELECTRONICS ', 'VHDL BASED DESIGN', 'DSA ', 'TECHNICAL WRITING ', 'CIRCUIT AND SYSTEMS ', 'LINEAR PROBABILITY AND STATISTICS'],
-      sem5: ['ANALOG ELECTRONICS', 'ENGINEERING ELECTRONICS', 'APPLIED MATHS-4', 'DIGITAL COMMUNICATION', 'SOFTWARE ENGINEERING', 'INDUSTRIAL MANAGEMENT'],
-      sem6: ['MICROWAVE DEVICES', 'MICROELECTRONICS', 'PRINCIPLES OF MANAGEMENT', 'POWER ELECTRONICS', 'SATELLITE COMMUNICATION', 'MICROPROCESSORS'],
-      sem7: ['INFORMATION SECURITY', 'WIRELESS COMMUNICATION', 'RADIO ENGINEERING ', 'CANTROL SYSTEM', 'DATA MINING', 'COMPLEXITY THEORY'],
-      sem8: ['MOBILE COMPUTING', 'TELLECOMMUNICATION', 'HVE-2', 'VLSI DESIGN', 'INFORMATION THEORY AND CODING ', 'SOFT COMPUTING'],
+        sem1: ['APPLIED MATHS-1', 'APPLIED PHYSICS-1', 'ENVIRONMENT STUDIES ', 'PROGRAMMING IN C', 'MANUFACTURING PROCESS', 'HUMAN VALUE ETHICS'],
+        sem2: ['APPLIED MATHS-2 ', 'APPLIED PHYSICS -2', 'ELECTRICAL SCIENCE', 'INDIAN CONSTITUTION', ' BASIC MECHANICAL ENGINEERING', 'COMMUNICATION SKILLS'],
+        sem3: ['COMPUTATIONAL TECHNIQUES', 'MACHINES', 'DIGITAL CIRCUITS', 'COMPUTATIONAL METHODS', 'DISCRETE MATHS', 'IKS'],
+        sem4: ['DIGITAL ELECTRONICS ', 'VHDL BASED DESIGN', 'DSA ', 'TECHNICAL WRITING ', 'CIRCUIT AND SYSTEMS ', 'LINEAR PROBABILITY AND STATISTICS'],
+        sem5: ['ANALOG ELECTRONICS', 'ENGINEERING ELECTRONICS', 'APPLIED MATHS-4', 'DIGITAL COMMUNICATION', 'SOFTWARE ENGINEERING', 'INDUSTRIAL MANAGEMENT'],
+        sem6: ['MICROWAVE DEVICES', 'MICROELECTRONICS', 'PRINCIPLES OF MANAGEMENT', 'POWER ELECTRONICS', 'SATELLITE COMMUNICATION', 'MICROPROCESSORS'],
+        sem7: ['INFORMATION SECURITY', 'WIRELESS COMMUNICATION', 'RADIO ENGINEERING ', 'CANTROL SYSTEM', 'DATA MINING', 'COMPLEXITY THEORY'],
+        sem8: ['MOBILE COMPUTING', 'TELLECOMMUNICATION', 'HVE-2', 'VLSI DESIGN', 'INFORMATION THEORY AND CODING ', 'SOFT COMPUTING'],
       };
       function populateSubjects() {
-      const selectedSemester = semesterSelect.value;
-      subjectContainer.innerHTML = '';
-      subjects[selectedSemester].forEach(subject => {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.textContent = subject;
-      subjectContainer.appendChild(card);
-      });
+        const selectedSemester = semesterSelect.value;
+        subjectContainer.innerHTML = '';
+        subjects[selectedSemester].forEach(subject => {
+          const card = document.createElement('div');
+          card.addEventListener('click', () => {
+            window.location.href = `/ap1`;
+          });
+          card.classList.add('card');
+          card.textContent = subject;
+          subjectContainer.appendChild(card);
+        });
       }
       populateSubjects();
       semesterSelect.addEventListener('change', populateSubjects);

@@ -34,24 +34,27 @@ html(lang='en')
       const semesterSelect = document.getElementById('semester-select');
       const subjectContainer = document.getElementById('subject-container');
       const subjects = {
-      sem1: ['APPLIED MATHS-1', 'APPLIED PHYSICS-1', 'ENVIRONMENT STUDIES ', 'PROGRAMMING IN C', 'MANUFACTURING PROCESS', 'HUMAN VALUE ETHICS'],
-      sem2: ['APPLIED MATHS-2 ', 'APPLIED PHYSICS -2', 'ELECTRICAL SCIENCE', 'INDIAN CONSTITUTION', ' BASIC MECHANICAL ENGINEERING', 'COMMUNICATION SKILLS'],
-      sem3: ['DSA', 'OOPS', 'DIGITAL CIRCUITS', 'COMPUTATIONAL METHODS', 'DISCRETE MATHS', 'IKS'],
-      sem4: ['DBMS ', 'JAVA', 'THEORY OF COMPUTATION ', 'TECHNICAL WRITING ', 'CIRCUIT AND SYSTEMS ', 'LINEAR PROBABILITY AND STATISTICS'],
-      sem5: ['COMPUTER GRAPHICS AND MULTIMEDIA', 'DIGITAL SIGNAL PROCESSING', 'APPLIED MATHS-4', 'CRYPTOGRAPHY', 'SOFTWARE ENGINEERING', 'INDUSTRIAL MANAGEMENT'],
-      sem6: ['COMPILER DESIGN', 'OPERATING SYSTEMS', 'GRID COMPUTING', 'COMPUTER NETWORKS', 'WEB TECHNOLOGY', 'MICROPROCESSORS'],
-      sem7: ['INFORMATION SECURITY', 'WIRELESS COMMUNICATION', 'NATURAL LANGUAGE PROCESSING', 'CANTROL SYSTEM', 'SOCIOLOGY', 'EMBEDDED SYSTEM'],
-      sem8: ['MOBILE COMPUTING', 'HVE-2', 'VLSI DESIGN', 'APP DEVLOPMENT', 'CYBER SECURITY', 'ADVANCE DBMS'],
+        sem1: ['APPLIED MATHS-1', 'APPLIED PHYSICS-1', 'ENVIRONMENT STUDIES ', 'PROGRAMMING IN C', 'MANUFACTURING PROCESS', 'HUMAN VALUE ETHICS'],
+        sem2: ['APPLIED MATHS-2 ', 'APPLIED PHYSICS -2', 'ELECTRICAL SCIENCE', 'INDIAN CONSTITUTION', ' BASIC MECHANICAL ENGINEERING', 'COMMUNICATION SKILLS'],
+        sem3: ['DSA', 'OOPS', 'DIGITAL CIRCUITS', 'COMPUTATIONAL METHODS', 'DISCRETE MATHS', 'IKS'],
+        sem4: ['DBMS ', 'JAVA', 'THEORY OF COMPUTATION ', 'TECHNICAL WRITING ', 'CIRCUIT AND SYSTEMS ', 'LINEAR PROBABILITY AND STATISTICS'],
+        sem5: ['COMPUTER GRAPHICS AND MULTIMEDIA', 'DIGITAL SIGNAL PROCESSING', 'APPLIED MATHS-4', 'CRYPTOGRAPHY', 'SOFTWARE ENGINEERING', 'INDUSTRIAL MANAGEMENT'],
+        sem6: ['COMPILER DESIGN', 'OPERATING SYSTEMS', 'GRID COMPUTING', 'COMPUTER NETWORKS', 'WEB TECHNOLOGY', 'MICROPROCESSORS'],
+        sem7: ['INFORMATION SECURITY', 'WIRELESS COMMUNICATION', 'NATURAL LANGUAGE PROCESSING', 'CANTROL SYSTEM', 'SOCIOLOGY', 'EMBEDDED SYSTEM'],
+        sem8: ['MOBILE COMPUTING', 'HVE-2', 'VLSI DESIGN', 'APP DEVLOPMENT', 'CYBER SECURITY', 'ADVANCE DBMS'],
       };
       function populateSubjects() {
-      const selectedSemester = semesterSelect.value;
-      subjectContainer.innerHTML = '';
-      subjects[selectedSemester].forEach(subject => {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.textContent = subject;
-      subjectContainer.appendChild(card);
-      });
+        const selectedSemester = semesterSelect.value;
+        subjectContainer.innerHTML = '';
+        subjects[selectedSemester].forEach(subject => {
+          const card = document.createElement('div');
+          card.addEventListener('click', () => {
+            window.location.href = `/ap1`;
+          });
+          card.classList.add('card');
+          card.textContent = subject;
+          subjectContainer.appendChild(card);
+        });
       }
       populateSubjects();
       semesterSelect.addEventListener('change', populateSubjects);

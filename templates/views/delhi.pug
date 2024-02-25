@@ -5,21 +5,21 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title College Courses
     style   
-        include ../../public/css/styles.css
+      include ../../public/css/styles.css
   body
-    //- include ../partials/navbar.pug
+    include ../partials/navbar.pug
     .container
       h1 College Courses
       #collegeDropdownContainer.dropdown
         select#collegeDropdown
           option(value='', selected='', disabled='') Select College
-          option(value='college1') BPIT
-          option(value='college2') DTU
-          option(value='college2') SRCC
+          option(value='bpit') BPIT
+          option(value='dtu') DTU
+          option(value='srcc') SRCC
           // Add more colleges as needed
       #collegeContent.content(style='display: none;')
-        #branchButtons.branches(style='display: none;')
-          // Branch buttons will be added here
+        #branchesContainer.branches
+          // Branch buttons will be dynamically added here
         #courseCards.course-cards(style='display: none;')
           // Courses will be dynamically added here
     script(src='./js/script.js')

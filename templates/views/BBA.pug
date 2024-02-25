@@ -32,22 +32,25 @@ html(lang='en')
       const semesterSelect = document.getElementById('semester-select');
       const subjectContainer = document.getElementById('subject-container');
       const subjects = {
-      sem1: ['PRINCIPLES OF MANAGEMENT', 'BUISNESS ECONOMICS-1', 'BUISNESS MATHEMATICS ', 'COMPUTER FUNDAMENTALS', 'FINANCIAL ACCOUNTING', 'HUMAN VALUE ETHICS'],
-      sem2: ['BUISNESS ORGANIZATION ', 'BUISNESS ECONOMICS -2', 'OPERATIONS RESEARCH IN MANAGEMENT', 'DBMS', ' COST ACCOUNTING', 'COMMUNICATION SKILLS'],
-      sem3: ['ORGANIZATIONAL BEHAVIOUR', 'INDIAN ECONOMY', 'MARKETING MANAGEMENT', 'COMPUTER APPLICATIONS', 'MANAGEMENT ACCOUNTING', 'IKS'],
-      sem4: ['HUMAN RESOURCE MANAGEMENT ', 'BUISNESS ENVIRONMENT', 'BUISNESS LAWS ', 'TECHNICAL WRITING ', 'TAXATION LAWS ', 'MARKETING RESEARCH'],
-      sem5: ['BUISNESS KNOWLEDGE', 'ENVIRONMENTAL SCIENCE', 'TECHNICAL WRITING', 'ENTREPERNEURSHIP DEVLOPMENT', 'PROJECT PLANNING', 'INDUSTRIAL MANAGEMENT'],
-      sem6: ['VALUES AND ETHINCS', 'SUMMER TRAINING', 'PRINCIPLES OF MANAGEMENT', 'INTERNATIONAL BUISNESS MANAGEMENT', 'PROJECT REPORT', 'FINANCIAL MANAGEMENT'],
+        sem1: ['PRINCIPLES OF MANAGEMENT', 'BUISNESS ECONOMICS-1', 'BUISNESS MATHEMATICS ', 'COMPUTER FUNDAMENTALS', 'FINANCIAL ACCOUNTING', 'HUMAN VALUE ETHICS'],
+        sem2: ['BUISNESS ORGANIZATION ', 'BUISNESS ECONOMICS -2', 'OPERATIONS RESEARCH IN MANAGEMENT', 'DBMS', ' COST ACCOUNTING', 'COMMUNICATION SKILLS'],
+        sem3: ['ORGANIZATIONAL BEHAVIOUR', 'INDIAN ECONOMY', 'MARKETING MANAGEMENT', 'COMPUTER APPLICATIONS', 'MANAGEMENT ACCOUNTING', 'IKS'],
+        sem4: ['HUMAN RESOURCE MANAGEMENT ', 'BUISNESS ENVIRONMENT', 'BUISNESS LAWS ', 'TECHNICAL WRITING ', 'TAXATION LAWS ', 'MARKETING RESEARCH'],
+        sem5: ['BUISNESS KNOWLEDGE', 'ENVIRONMENTAL SCIENCE', 'TECHNICAL WRITING', 'ENTREPERNEURSHIP DEVLOPMENT', 'PROJECT PLANNING', 'INDUSTRIAL MANAGEMENT'],
+        sem6: ['VALUES AND ETHINCS', 'SUMMER TRAINING', 'PRINCIPLES OF MANAGEMENT', 'INTERNATIONAL BUISNESS MANAGEMENT', 'PROJECT REPORT', 'FINANCIAL MANAGEMENT'],
       };
       function populateSubjects() {
-      const selectedSemester = semesterSelect.value;
-      subjectContainer.innerHTML = '';
-      subjects[selectedSemester].forEach(subject => {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.textContent = subject;
-      subjectContainer.appendChild(card);
-      });
+        const selectedSemester = semesterSelect.value;
+        subjectContainer.innerHTML = '';
+        subjects[selectedSemester].forEach(subject => {
+          const card = document.createElement('div');
+          card.addEventListener('click', () => {
+            window.location.href = `/ap1`;
+          });
+          card.classList.add('card');
+          card.textContent = subject;
+          subjectContainer.appendChild(card);
+        });
       }
       populateSubjects();
       semesterSelect.addEventListener('change', populateSubjects);

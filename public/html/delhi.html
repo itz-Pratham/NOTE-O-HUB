@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Courses</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
@@ -14,22 +14,21 @@
         <div class="dropdown" id="collegeDropdownContainer">
             <select id="collegeDropdown">
                 <option value="" selected disabled>Select College</option>
-                <option value="college1">BPIT</option>
-                <option value="college2">DTU</option>
-                <option value="college2">SRCC</option>
+                <option value="college1">College 1</option>
+                <option value="college2">College 2</option>
                 <!-- Add more colleges as needed -->
             </select>
         </div>
         <div class="content" id="collegeContent" style="display: none;">
-            <div class="branches" id="branchButtons" style="display: none;">
-                <!-- Branch buttons will be added here -->
+            <div class="branches" id="branchesContainer">
+                <!-- Branch buttons will be dynamically added here -->
             </div>
             <div class="course-cards" id="courseCards" style="display: none;">
                 <!-- Courses will be dynamically added here -->
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -72,8 +72,9 @@ app.post("/signup",async(req,res)=>{
                 Branch:req.body.Branch,
                            
             })
-            const registered=await registerStudent.save()
-            res.status(201).render("signup.pug")
+            const registered = await registerStudent.save()
+            // res.status.send(alert("registered successfully please login "))
+            res.status(201).render("login.pug")
 
         }
     } catch (error) {
@@ -86,6 +87,7 @@ app.post("/login", async(req, res) => {
         const Password = req.body.Password;
         const userEmail = await Register.findOne({ Email: Email })
         if (userEmail.Password === Password) {
+            // res.send(alert("logged in"))
             res.render('home.pug');
         }
         else {

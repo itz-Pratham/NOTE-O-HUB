@@ -6,13 +6,16 @@ body {
 }
 
 .container {
-    max-width: fit-content;
+    max-width: max-content;
     margin: 100px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 h1 {
@@ -32,33 +35,38 @@ h1 {
 }
 
 .course-cards {
+    
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
 }
 
-.course-card {
+.course-cards {
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 10px;
+    margin: auto;
     min-width: 200px;
-    max-width: 300px;
+    max-width: max-content;
     text-align: center;
+    
 }
 
 .branches {
     padding: 10px;
     gap: 50px;
-
+    max-width: max-content;
+    
     background: none;
+    display: flex;
+    justify-content: center;
 }
 
-.branch-button {
+.course-button {
 
 
-    margin: 0;
+    margin: 1vw;
     padding: 1vw;
     border-radius: 15px;
     box-shadow: 1px 1px black;
@@ -68,4 +76,13 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     min-width: 10vw;
+    /* margin: auto; */
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.highlighted{
+    color:aqua;
 }

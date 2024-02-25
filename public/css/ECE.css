@@ -71,6 +71,7 @@ h1 {
     margin: 10px;
     width: calc(33.33% - 20px);
     text-align: center;
+    cursor: pointer;
 }
 #semester-select {
     font-size: 25px;
