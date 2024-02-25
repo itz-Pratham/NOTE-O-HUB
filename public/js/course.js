@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    playPauseButton.addEventListener("click", function() {
+    playPauseButton.addEventListener("click", function(event) {
         if (videoPlayer.paused || videoPlayer.ended) {
             videoPlayer.play();
             playPauseButton.innerHTML = "&#10074;&#10074;";

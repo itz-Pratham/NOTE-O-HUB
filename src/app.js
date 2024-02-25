@@ -50,6 +50,10 @@ app.get("/it",(req,res)=>{
 app.get("/mba",(req,res)=>{
     res.render("mba.pug")
 });
+app.get("/course",(req,res)=>{
+    res.render("course.pug")
+});
+
 
 
 app.post("/signup",async(req,res)=>{
