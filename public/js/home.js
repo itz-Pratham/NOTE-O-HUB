@@ -81,8 +81,11 @@ function addCity(cityName) {
 function navigateToNextPage(){
     var state=document.getElementById("states").value;
     
-   
+    if(state==""){ 
+        alert("Please select a city"); 
+    } else {
     // window.location.href = "/" + state.toLowerCase().replace(" ", "_");
     window.location.href = "/delhi";
+    }
             
 }
