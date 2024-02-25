@@ -11,34 +11,37 @@ html(lang='en')
     .main
       h1 Applied Physics-1
     .work
+      
       button(type='button', onclick="toggleVisibility('syllabus')") Syllabus
       button(type='button', onclick="toggleVisibility('notes')") Notes
-      button(type='button', onclick="toggleVisibility('pyqs')") PYQs
+      button(type='button', onclick="toggleVisibility('pyqs')") PYQs      
       button(type='button', onclick="toggleVisibility('youtube')") Youtube
       button(type='button', onclick="toggleVisibility('premium')") Premium Course
     div(style='width: 65%; margin-left: 240px; margin-top: 10px;')
       hr
     #syllabus.hidden
       // Content for Syllabus
-      button#download(type='button')
-        | Download Syllabus 
-        i.fa-brands.fa-google-drive(style='color: rgb(0, 0, 0); font-size: 23px; height: 2px;')
+      a(href="https://www.phys.ufl.edu/~pjh/teaching/phy4604/syllabus.pdf")
+        button#download(type='button')
+          | Download Syllabus 
+          i.fa-brands.fa-google-drive(style='color: rgb(0, 0, 0); font-size: 23px; height: 2px;')
     #notes.hidden(style='width:100%;')
-      // Content for Notes
-      // <img src="https://img.favpng.com/20/15/1/google-drive-google-sync-google-docs-backup-png-favpng-cKVLVjewaY5uJB2RPPU66p0rM_t.jpg">
-      button#download(type='button')
-        | Download Notes 
-        i.fa-brands.fa-google-drive(style='color: rgb(0, 0, 0);')
+
+      a(href="https://scholar.harvard.edu/files/david-morin/files/waves_quantum.pdf")
+        button#download(type='button')
+          | Download Notes 
+          i.fa-brands.fa-google-drive(style='color: rgb(0, 0, 0);')
     #pyqs.hidden
-      // Content for PYQs
-      button#download(type='button')
-        | Download PYQs 
-        i.fa-brands.fa-google-drive(style='color: rgb(0, 0, 0);')
+      a(href="https://ocw.mit.edu/courses/8-04-quantum-physics-i-spring-2016/47367602c26c4559e9c267f8694203bf_MIT8_04S16_FinalTest_2015.pdf")
+        button#download(type='button')
+          | Download PYQs 
+          i.fa-brands.fa-google-drive(style='color: rgb(0, 0, 0);')
     #youtube.hidden
-      // Content for Youtube
-      button#download(type='button')
-        | Playlist Link 
-        i.fa-brands.fa-youtube(style='color: rgb(0, 0, 0); font-size: 23px; height: 2px;')
+      
+      a(href="https://youtube.com/@TechnicalPhysics?si=B0K1v5fnsijyHt8Z")
+        button#download(type='button')
+          | Playlist Link 
+          i.fa-brands.fa-youtube(style='color: rgb(0, 0, 0); font-size: 23px; height: 2px;')
     #premium.hidden
       // Content for Premium Course
       // <h1 style="margin-top: 40px; margin-left: 25vw;">Premium Course content goes here.</h1>
